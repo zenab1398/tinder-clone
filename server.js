@@ -16,7 +16,6 @@ mongoose.connect(connection_url, {
     useUnifiedTopology: true
 })
 
-app.get('/', (req, res) => res.status(200).send("Hello World!!"))
 
 app.post('/tinder/cards', (req, res) => {
     const dbCard = req.body;
@@ -27,6 +26,7 @@ app.post('/tinder/cards', (req, res) => {
         res.status(201).send(data)
     })
 })
+app.get('/', (req, res) => res.status(200).send("Hello World!!"))
 
 app.get('/tinder/cards', (req, res) => {
     try {
